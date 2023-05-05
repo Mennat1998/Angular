@@ -1,0 +1,35 @@
+<h2>List Of Students</h2>
+
+<div class="table-responsive">
+  <table class="table table-primary">
+      <thead>
+          <tr>
+            <th scope="col"> #</th>
+              <th scope="col" >Id</th>
+              <th scope="col" >Name</th>
+              <th scope="col" >Age</th>
+              <th>Buttons</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr class="" *ngFor="let item of students ;let i=index">
+            <td>{{i}}</td>
+              <td scope="row">{{item.Id}}</td>
+              <td >{{item.name}}</td>
+              <td>{{item.age}}</td>
+              <td>
+                <button (click)="showdetails(item.Id)">Show Details</button>
+                <button (click)="Update(item.Id)">Update</button>
+                <button (click)=" Delete(item.Id)">Delete</button>
+              </td>
+
+          </tr>
+      </tbody>
+  </table>
+</div>
+<app-student-add (onstudentAdd)="AddStudent($event)"></app-student-add>
+<app-studentdetails [DetailsStudent]="detailsstd" *ngIf="detailsflag" (onhide)="detailsflag=false"></app-studentdetails>
+<app-studentupdate [updateStudent]="updatestd"  (onstudentUpdate)="updateStudent($event)"></app-studentupdate>
+
+
+

@@ -1,0 +1,22 @@
+<p>departmentlist works!</p>
+<div class="table-responsive">
+  <table class="table table-primary">
+      <thead>
+          <tr>
+            <th>#</th>
+              <th scope="col" >Id</th>
+              <th scope="col" >Name</th>
+              <th scope="col" >Location</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr class="" *ngFor="let item of Departments ; let i=index" >
+            <td>{{i}}</td>
+              <td scope="row">{{item.Deptid}}</td>
+              <td >{{item.DeptName}}</td>
+              <td>{{item.Location}}</td>
+
+          </tr>
+      </tbody>
+  </table>
+</div>

@@ -1,0 +1,15 @@
+<p>courseadd works!</p>
+<label>Courseid</label>
+<input [(ngModel)]="Crs.Courseid">
+<br>
+<label>CourseName</label>
+<input [(ngModel)]="Crs.CourseName">
+<br>
+<label>LectHours</label>
+<input [(ngModel)]="Crs.LectHours">
+<br>
+<label>LabsHours</label>
+<input [(ngModel)]="Crs.LabsHour">
+<br>
+<button (click)="AddCourse()" [routerLink]="['/courses']">Add Course</button>
+
