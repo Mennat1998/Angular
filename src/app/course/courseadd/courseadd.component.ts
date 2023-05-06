@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { course } from 'src/app/_models/course';
 import { CourseService } from 'src/app/services/course.service';
 
@@ -16,9 +17,10 @@ Crs: course=new course();
 {
 this.crsservice=crsservice ;
 }*/
-constructor(public crsservice:CourseService){}
+constructor(public crsservice:CourseService ,private router:Router){}
 AddCourse()
 {
 this.crsservice.AddCourse(new course(this.Crs.Courseid,this.Crs.CourseName,this.Crs.LectHours,this.Crs.LabsHour))
+this.router.navigateByUrl("/courses")
 }
 }

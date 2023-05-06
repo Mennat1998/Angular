@@ -1,32 +1,34 @@
-<p>courselist works!</p>
-<div class="table-responsive">
-  <table class="table table-primary">
-      <thead>
-          <tr>
-            <th scope="col"> #</th>
+<h3>List Of Courses</h3>
+<div>
+  <a [routerLink]="['/courses','add']" class="btn btn-info">Add Course</a>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col"> #</th>
               <th scope="col" >Courseid</th>
               <th scope="col" >CourseName</th>
               <th scope="col" >LectHours</th>
               <th scope="col">LabsHour</th>
               <th>Buttons</th>
-          </tr>
-      </thead>
-      <tbody>
-          <tr class="" *ngFor="let item of courses ;let i=index">
-            <td>{{i}}</td>
-              <td scope="row">{{item.Courseid}}</td>
-              <td >{{item.CourseName}}</td>
-              <td>{{item.LectHours}}</td>
-              <td>{{item.LabsHour}}</td>
-              <td>
-              <!-- <button (click)="DetailsId=item.Courseid">Details</button>-->
-<a [routerLink]="['/courses','details',item.Courseid]">Details</a> |
-<a [routerLink]="['/courses','update',item.Courseid]">Update</a>|
-<a [routerLink]="['/courses','delete',item.Courseid]">Delete</a>|
-              </td>
-          </tr>
-      </tbody>
-  </table>
-</div>
+    </tr>
+
+  </thead>
+  <tbody>
+    <tr class="" *ngFor="let item of courses ;let i=index">
+      <td>{{i}}</td>
+        <td scope="row">{{item.Courseid}}</td>
+        <td >{{item.CourseName}}</td>
+        <td>{{item.LectHours}}</td>
+        <td>{{item.LabsHour}}</td>
+        <td>
+        <!-- <button (click)="DetailsId=item.Courseid">Details</button>-->
+<a [routerLink]="['/courses','details',item.Courseid]" class="btn btn-info">Details</a> |
+<a [routerLink]="['/courses','update',item.Courseid]" class="btn btn-info">Update</a>|
+<a [routerLink]="['/courses','delete',item.Courseid]" class="btn btn-info">Delete</a>
+        </td>
+    </tr>
+</tbody>
+</table>
 <!--<app-coursedetails [Courseid]="DetailsId"></app-coursedetails>-->
-<a [routerLink]="['/courses','add']">Add</a>
+<router-outlet></router-outlet>

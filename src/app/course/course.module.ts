@@ -7,6 +7,7 @@ import { CourseupdateComponent } from './courseupdate/courseupdate.component';
 import{FormsModule} from '@angular/forms'
 import { RouterModule } from '@angular/router';
 import { CoursedeleteComponent } from './coursedelete/coursedelete.component';
+import { courseRoutingModule } from './course-routing-module';
 
 
 
@@ -14,7 +15,7 @@ import { CoursedeleteComponent } from './coursedelete/coursedelete.component';
 @NgModule({
   declarations: [CourselistComponent, CourseaddComponent, CoursedetailsComponent, CourseupdateComponent, CoursedeleteComponent],
   imports: [
-CommonModule,FormsModule,RouterModule
+CommonModule,FormsModule,RouterModule,courseRoutingModule
   ],
   exports:[CourselistComponent,CourseaddComponent,CoursedetailsComponent, CourseupdateComponent,CoursedeleteComponent]
 })

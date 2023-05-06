@@ -1,5 +1,6 @@
-import { Component, Input,OnInit,OnChanges } from '@angular/core';
+import { Component, Input,OnInit,OnChanges,OnDestroy } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
+import { Subscriber, Subscription } from 'rxjs';
 import { course } from 'src/app/_models/course';
 import { CourseService } from 'src/app/services/course.service';
 
@@ -8,12 +9,13 @@ import { CourseService } from 'src/app/services/course.service';
   templateUrl: './coursedetails.component.html',
   styleUrls: ['./coursedetails.component.css']
 })
-export class CoursedetailsComponent implements OnInit{
+export class CoursedetailsComponent implements OnInit,OnDestroy{
 
 
   Courseid=1
 
   crs:course|null=null;
+  sub:Subscription|null=null ;
   constructor( public crsserve:CourseService, private ac:ActivatedRoute)
   {
 
@@ -24,7 +26,13 @@ export class CoursedetailsComponent implements OnInit{
 }*/
   ngOnInit(): void {
 
-    this.Courseid=this.ac.snapshot.params['Courseid']
-    this.crs=this.crsserve.GetcourseById(this.Courseid)
+  //  this.Courseid=this.ac.snapshot.params['Courseid']
+   // this.crs=this.crsserve.GetcourseById(this.Courseid)
+
+  this.sub= this.ac.params.subscribe(Data=>
+    {this.crs=this.crsserve.GetcourseById(Data["Courseid"])})
+  }
+  ngOnDestroy(): void {
+    this.sub?.unsubscribe();
   }
 }
