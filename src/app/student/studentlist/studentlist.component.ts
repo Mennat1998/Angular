@@ -69,7 +69,7 @@ updateStudent(std:Student)
       this.students[i].name=std.name
       this.students[i].age=std.age
 
-this.students[i]=(new Student( std.Id, std.name,std.age ))
+this.students[i]=(std)
       break;
     }
   }

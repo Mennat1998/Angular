@@ -10,10 +10,10 @@ const route:Routes=[
   [
     {path:'details/:Courseid',component:CoursedetailsComponent }
   ]*/},
-  {path:'details/:Courseid',component:CoursedetailsComponent },
-  {path:'update/:Courseid',component:CourseupdateComponent},
+  {path:'details/:courseid',component:CoursedetailsComponent },
+  {path:'update/:courseid',component:CourseupdateComponent},
   {path:'add',component:CourseaddComponent},
-  {path:'delete/:Courseid',component:CoursedeleteComponent},
+  {path:'delete/:courseid',component:CoursedeleteComponent},
 ]
 
 @NgModule({

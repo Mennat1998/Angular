@@ -17,15 +17,15 @@
   <tbody>
     <tr class="" *ngFor="let item of courses ;let i=index">
       <td>{{i}}</td>
-        <td scope="row">{{item.Courseid}}</td>
-        <td >{{item.CourseName}}</td>
-        <td>{{item.LectHours}}</td>
-        <td>{{item.LabsHour}}</td>
+        <td scope="row">{{item.courseid}}</td>
+        <td >{{item.courseName}}</td>
+        <td>{{item.lectHours}}</td>
+        <td>{{item.labsHour}}</td>
         <td>
         <!-- <button (click)="DetailsId=item.Courseid">Details</button>-->
-<a [routerLink]="['/courses','details',item.Courseid]" class="btn btn-info">Details</a> |
-<a [routerLink]="['/courses','update',item.Courseid]" class="btn btn-info">Update</a>|
-<a [routerLink]="['/courses','delete',item.Courseid]" class="btn btn-info">Delete</a>
+<a [routerLink]="['/courses','details',item.courseid]" class="btn btn-info">Details</a> |
+<a [routerLink]="['/courses','update',item.courseid]" class="btn btn-info">Update</a>|
+<a [routerLink]="['/courses','delete',item.courseid]" class="btn btn-info">Delete</a>
         </td>
     </tr>
 </tbody>

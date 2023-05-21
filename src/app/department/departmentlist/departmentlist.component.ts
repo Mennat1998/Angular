@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Department } from 'src/app/_models/department';
+import { DepartmentService } from 'src/app/services/department.service';
+import {  Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-departmentlist',
@@ -7,9 +9,14 @@ import { Department } from 'src/app/_models/department';
   styleUrls: ['./departmentlist.component.css']
 })
 export class DepartmentlistComponent {
-Departments:Department[]=
-[ new Department(1,"PD","Alex"),
-new Department(2,"OS","Alex"),
-
-]
+Departments:Department[]=[];
+sub:Subscription|null=null ;
+constructor( public dptservice:DepartmentService){}
+ngOnInit(): void {
+this.dptservice.GetAlldepartments().subscribe(
+data=>{
+  this.Departments=data;})   }
+ngOnDestroy(): void {
+this.sub?.unsubscribe();
+}
 }

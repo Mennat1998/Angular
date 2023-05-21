@@ -1,22 +1,31 @@
-<p>departmentlist works!</p>
-<div class="table-responsive">
-  <table class="table table-primary">
-      <thead>
-          <tr>
-            <th>#</th>
-              <th scope="col" >Id</th>
-              <th scope="col" >Name</th>
-              <th scope="col" >Location</th>
-          </tr>
-      </thead>
-      <tbody>
-          <tr class="" *ngFor="let item of Departments ; let i=index" >
-            <td>{{i}}</td>
-              <td scope="row">{{item.Deptid}}</td>
-              <td >{{item.DeptName}}</td>
-              <td>{{item.Location}}</td>
 
-          </tr>
-      </tbody>
-  </table>
+<h3>List Of Departments</h3>
+<div>
+  <a [routerLink]="['/departments','add']" class="btn btn-info">Add Department</a>
 </div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col"> #</th>
+              <th scope="col" >Deptid</th>
+              <th scope="col" >DeptName</th>
+              <th scope="col" >Location</th>
+              <th>Buttons</th>
+    </tr>
+
+  </thead>
+  <tbody>
+    <tr class="" *ngFor="let item of Departments ;let i=index">
+      <td>{{i}}</td>
+        <td scope="row">{{item.deptid}}</td>
+        <td >{{item.deptName}}</td>
+        <td>{{item.location}}</td>
+        <td>
+<a [routerLink]="['/departments','details',item.deptid]" class="btn btn-info">Details</a> |
+<a [routerLink]="['/departments','update',item.deptid]" class="btn btn-info">Update</a>|
+<a [routerLink]="['/departments','delete',item.deptid]" class="btn btn-info">Delete</a>
+        </td>
+    </tr>
+</tbody>
+</table>
+<router-outlet></router-outlet>

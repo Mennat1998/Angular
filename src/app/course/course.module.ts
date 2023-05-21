@@ -13,7 +13,11 @@ import { courseRoutingModule } from './course-routing-module';
 
 
 @NgModule({
-  declarations: [CourselistComponent, CourseaddComponent, CoursedetailsComponent, CourseupdateComponent, CoursedeleteComponent],
+  declarations: [CourselistComponent,
+     CourseaddComponent,
+     CoursedetailsComponent,
+     CourseupdateComponent,
+      CoursedeleteComponent],
   imports: [
 CommonModule,FormsModule,RouterModule,courseRoutingModule
   ],

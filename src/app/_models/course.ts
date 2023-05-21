@@ -1,5 +1,6 @@
 export class course
 {
-constructor(public Courseid:number=0,public CourseName:string="",
-public LectHours:number=0,public LabsHour:number=0){}
+
+constructor(public courseid:number=0,public courseName:string="",
+public lectHours:number=0,public labsHour:number=0){}
 }

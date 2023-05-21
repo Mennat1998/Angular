@@ -12,5 +12,5 @@ export class Department {
 
   }
 */
-constructor(public Deptid:number=0,public DeptName:string="",public Location:string=""){}
+constructor(public deptid:number=0,public deptName:string="",public location:string=""){}
 }

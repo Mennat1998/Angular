@@ -10,10 +10,7 @@ import { CourseService } from 'src/app/services/course.service';
   styleUrls: ['./coursedetails.component.css']
 })
 export class CoursedetailsComponent implements OnInit,OnDestroy{
-
-
   Courseid=1
-
   crs:course|null=null;
   sub:Subscription|null=null ;
   constructor( public crsserve:CourseService, private ac:ActivatedRoute)
@@ -28,9 +25,15 @@ export class CoursedetailsComponent implements OnInit,OnDestroy{
 
   //  this.Courseid=this.ac.snapshot.params['Courseid']
    // this.crs=this.crsserve.GetcourseById(this.Courseid)
-
+/*
   this.sub= this.ac.params.subscribe(Data=>
-    {this.crs=this.crsserve.GetcourseById(Data["Courseid"])})
+    {this.crs=this.crsserve.GetcourseById(Data["courseid"])})*/
+    this.sub= this.ac.params.subscribe(data=>{
+      this.crsserve.GetcourseById(data["courseid"]).subscribe(d=>
+        {
+          this.crs=d ;
+        })
+    })
   }
   ngOnDestroy(): void {
     this.sub?.unsubscribe();

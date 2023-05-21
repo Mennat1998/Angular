@@ -1,4 +1,22 @@
-<h1>Department</h1>
+<h4>Details of Department :</h4>
+<table class="table table-success table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Deptid</th>
+      <th scope="col">DeptName</th>
+      <th scope="col">LocationHours</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td  >{{Dept?.deptid}}</td>
+      <td >{{Dept?.deptName}}</td>
+      <td >{{Dept?.location}}</td>
+    </tr>
+  </tbody>
+</table>
+<!--Day 2 -->
+<!--<h1>Department</h1>
 <label >Id :</label>
 <input #t1 type="text" > {{ t1.value}}
 <br>
@@ -8,4 +26,4 @@
 <label>Location :</label>
 <input #t3 type="text" >{{t3.value}}
 <br>
-<button (click)=" savechanges(t1.value,t2.value,t3.value)">Send</button>
+<button (click)=" savechanges(t1.value,t2.value,t3.value)">Send</button>-->

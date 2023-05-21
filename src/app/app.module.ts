@@ -1,7 +1,7 @@
 import { NgModule, Component } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import{FormsModule}from '@angular/forms'
-
+import{HttpClientModule} from '@angular/common/http'
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { StudentModule } from './student/student.module';
@@ -17,7 +17,7 @@ import { AppRoutingModule } from './app-routing.module';
   ],
   imports: [
   BrowserModule,CoreModule,StudentModule,DepartmentModule
-  ,FormsModule,AppRoutingModule],
+  ,FormsModule,AppRoutingModule,HttpClientModule],
 
   providers: [],
   bootstrap: [AppComponent]

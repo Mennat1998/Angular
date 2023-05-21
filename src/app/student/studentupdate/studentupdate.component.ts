@@ -14,6 +14,6 @@ updateStudent=new Student();
 onstudentUpdate: EventEmitter<Student>=new EventEmitter<Student>();
 Update()
 {
-this.onstudentUpdate.emit(this.updateStudent)
+this.onstudentUpdate.emit(new Student(this.updateStudent.Id,this.updateStudent.name,this.updateStudent.age))
 }
 }

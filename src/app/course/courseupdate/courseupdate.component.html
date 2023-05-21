@@ -1,16 +1,17 @@
 <p>courseupdate works!</p>
 <label>Courseid</label>
-<input [(ngModel)]="crs.Courseid">
+<input [(ngModel)]="crs.courseid" class="form-control">
 <br>
 <label>CourseName</label>
-<input [(ngModel)]="crs.CourseName">
+<input [(ngModel)]="crs.courseName" class="form-control">
 <br>
 <label>LectHours</label>
-<input [(ngModel)]="crs.LectHours">
+<input [(ngModel)]="crs.lectHours" class="form-control">
 <br>
 <label>LabsHours</label>
-<input [(ngModel)]="crs.LabsHour">
+<input [(ngModel)]="crs.labsHour" class="form-control">
 <br>
-<button (click)="UpdateCourse()" [routerLink]="['/courses']">update Course</button>
-
+<button (click)="UpdateCourse()" class="btn btn-primary">update Course</button>
+<br>
+<br>
 

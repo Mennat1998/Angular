@@ -3,17 +3,25 @@ import { CommonModule } from '@angular/common';
 import { DepartmentdetailsComponent } from './departmentdetails/departmentdetails.component';
 import { DepartmentlistComponent } from './departmentlist/departmentlist.component';
 import { DepartmentAddComponent } from './department-add/department-add.component';
+import { departmentRoutingModule } from './department-routing-module';
 
-
+import{FormsModule} from '@angular/forms'
+import { RouterModule } from '@angular/router';
+import { DepartmentupdateComponent } from './departmentupdate/departmentupdate.component';
+import { DepartmentdeleteComponent } from './departmentdelete/departmentdelete.component';
 
 @NgModule({
   declarations: [
     DepartmentdetailsComponent,
     DepartmentlistComponent,
-    DepartmentAddComponent
+    DepartmentAddComponent,
+    DepartmentupdateComponent,
+    DepartmentdeleteComponent
   ],
   imports: [
-    CommonModule
-  ],exports:[DepartmentdetailsComponent,DepartmentlistComponent]
+    CommonModule,departmentRoutingModule,FormsModule,RouterModule,
+  ],exports:[DepartmentdetailsComponent,
+    DepartmentlistComponent, DepartmentupdateComponent,
+    DepartmentdeleteComponent]
 })
 export class DepartmentModule { }

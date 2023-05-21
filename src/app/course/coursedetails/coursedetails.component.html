@@ -1,4 +1,19 @@
-<p>coursedetails works!</p>
-<div alert alert-success>
-  {{crs?.Courseid}},{{crs?.CourseName}},{{crs?.LectHours}},{{crs?.LabsHour}}
-</div>
+<h4>Details of Course :</h4>
+<table class="table table-success table-striped">
+  <thead>
+    <tr>
+      <th scope="col">courseid</th>
+      <th scope="col">courseName</th>
+      <th scope="col">lectHours</th>
+      <th scope="col">labsHour</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td  >{{crs?.courseid}}</td>
+      <td >{{crs?.courseName}}</td>
+      <td >{{crs?.lectHours}}</td>
+      <td>{{crs?.labsHour}}</td>
+    </tr>
+  </tbody>
+</table>

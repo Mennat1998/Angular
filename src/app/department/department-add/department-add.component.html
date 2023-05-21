@@ -1,1 +1,13 @@
-<p>department-add works!</p>
+<br>
+<label>DepartmentId:</label>
+<input [(ngModel)]="dpt.deptid" class="form-control">
+<br>
+<label>DepartmentName:</label>
+<input [(ngModel)]="dpt.deptName" class="form-control">
+<br>
+<label>DepartmentLocation</label>
+<input [(ngModel)]="dpt.location" class="form-control">
+<br>
+<button (click)="AddDept()" class="btn btn-primary" >Add Course</button>
+<br>
+<br>

@@ -20,7 +20,9 @@ this.crsservice=crsservice ;
 constructor(public crsservice:CourseService ,private router:Router){}
 AddCourse()
 {
-this.crsservice.AddCourse(new course(this.Crs.Courseid,this.Crs.CourseName,this.Crs.LectHours,this.Crs.LabsHour))
-this.router.navigateByUrl("/courses")
+this.crsservice.AddCourse(new course(this.Crs.courseid,this.Crs.courseName,
+  this.Crs.lectHours,this.Crs.labsHour)).subscribe(a=>{
+    this.router.navigateByUrl("/courses")}
+  )
 }
 }
